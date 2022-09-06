@@ -35,3 +35,64 @@ hr {
     border-width: 0.01em;
     border-color: rgba(0,0,255,0.10);
 }
+.logo2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 45px;
+    margin-left: 700px;
+}
+.stars {
+    margin-bottom: 8px;
+}
+.material-symbols-outlined {
+    color: #f68059;
+}
+.hotelTitle {
+    color: #242c4a;    
+    margin-bottom: 18px;
+    font: 400 42px/53px Butler;
+}
+.hotelSubtitle {
+    color: #242c4a;
+    opacity: .5;
+    font-size: small;
+    text-transform: uppercase;
+}
+.rece {
+    display: flex;
+    text-align: center;
+    margin-top: 70px;
+    margin-left: 240px;
+}
+.receText p{
+    margin-bottom: 8px;
+    font-weight:bold;
+    color: #242c4a;
+    margin-right: 10px;
+}
+.receText span {
+    color: grey;
+    font-weight: bold;
+    font-size: small;
+}
+.score {
+    width: 48px;
+    height: 48px;
+    margin-top: 13px;
+    border: 1px solid #2baf40;
+    border-radius: 50%;
+    border-bottom-left-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.score span {
+    color: #2baf40;
+    font-weight: bold;
+    font-size: large;
+}
+section {
+    display: flex;
+    font-family: 'PT Sans', sans-serif;
+}
