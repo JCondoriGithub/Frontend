@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+.head {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: 'PT Sans', sans-serif;
+    color: #242c4a;
+}
+.logo {
+    margin-right: 0px;
+}
+.title {
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+.subtitle {
+    margin-top: 0;
+    margin-left: 13px;
+    font-size: xx-small;
+}
+nav {
+    margin-top: 40px;
+    font-size: small;
+    margin-left: 650px;
+}
+select {
+    background: transparent;
+    border: 0;
+    color: #242c4a;
+    margin-right: 30px;
+}
+hr {
+    border-width: 0.01em;
+    border-color: rgba(0,0,255,0.10);
+}
