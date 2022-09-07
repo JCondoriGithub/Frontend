@@ -122,3 +122,65 @@ section {
     border-bottom: 1px solid #242c4a;
     font: 400 17px/19px Roboto,sans-serif;
 }
+.titleMenu {
+    font-family: 'PT Sans', sans-serif;
+    color:#242c4a;
+    font-size: xx-large;
+    margin-top: 50px;
+    margin-left: 400px
+}
+.imageMap {
+    margin-left: 400px;
+}
+.imageMap img {
+    position: absolute;
+}
+.buttonMap {
+    position: absolute;
+    padding: 15px 45px;
+    background: #242c4a;
+    color: white;
+    margin-top: 160px;
+    margin-left: 460px;
+    cursor: pointer;
+}
+.div1 {
+    position: absolute;
+    margin-top: 375px;
+    margin-left: 400px;
+}
+.div1 p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: small;
+    color: gray;
+    margin-bottom: 8px;
+}
+.div1 span {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color: #242c4a;
+}
+.div2 {
+    position: absolute;
+    margin-top: 447px;
+    margin-left: 960px;
+    border-left: 0.01em solid rgba(0,0,255,0.10);
+    padding-left: 23px;
+
+}
+.div2 p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: small;
+    color: gray;
+    margin-bottom: 8px;
+    margin-top: 0;
+}
+.div2 ul {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 14px;
+    color:#242c4a;
+    padding-left: 14px;
+}
+.div2 ul li {
+    margin-bottom: 15px;
+}
