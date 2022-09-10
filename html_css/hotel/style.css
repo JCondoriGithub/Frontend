@@ -184,3 +184,147 @@ section {
 .div2 ul li {
     margin-bottom: 15px;
 }
+footer {
+    height: 511px;
+    width: 100%;
+    background: #242c4a;
+    margin-top: 800px;
+
+}
+.divf {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.fAzi {
+    margin-right: 130px;
+    margin-top: 70px;
+    margin-bottom: 0;
+
+}
+.fAzi p {
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.fAzi, ul {
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0%;
+    margin-bottom: 0;
+
+}
+.fAzi, ul a {
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(196, 195, 195);   
+    font-family: 'PT Sans', sans-serif;
+}
+.fAzi, ul li {
+    margin-bottom: 18px;
+}
+.fViag {
+    margin-top: 70px;
+}
+.fViag p {
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.divf2 {
+    margin-top: 70px;
+    margin-left: 210px;
+    padding-left: 40px;
+    border-left: 0.01em solid #414d68;
+}
+.newsL p {
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    font-size: 18px;
+}
+input {
+    background: transparent;
+    padding: 12px 15px;
+    color: white;
+    border: 1px solid #414d68;;
+}
+.newsL button {
+    font-family: 'PT Sans', sans-serif;
+    font-size: small;
+    color: white;
+    background: #656b80;
+    padding: 12px 50px;
+    border: none;
+}
+.fInfo {
+    display: flex;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 0.01em solid #414d68;
+}
+.fInfoAv {
+    margin-left: 10px;
+}
+.fInfoAv p {
+    font: 500 18px/21px Roboto,sans-serif;
+    color: white;
+    margin: 0;
+}
+.fInfoAv span {
+    font-family: 'PT Sans', sans-serif;
+    color: rgb(196, 195, 195);
+    font-size: small;
+}
+.divf3 {
+    display: flex;
+    margin-top: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.divf3_1 {
+    width: 1260px;
+    display: flex;
+    border-top: 0.01em solid #414d68;
+    justify-content: center;
+}
+.material-symbols-outlined {
+    color: hsla(0,0%,100%,.5);
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.divf3 p {
+    font: 600 16px/26px Roboto,sans-serif;
+    color: hsla(0,0%,100%,.5);
+    margin-right: 270px;
+}
+.divf3l {
+    margin-top: 20px;
+}
+.divf3l span {
+    font: normal 14px/1.5 Roboto,sans-serif;
+    color: rgba(237,239,240,.8);
+    cursor: pointer;
+    margin-right: 30px;
+}
+.icons svg {
+    color: red;
+    margin-left: 10px;
+}
+.divf4 {
+    background: #181e36;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.divf4 span {
+    margin-right: 645px;
+    font: normal 14px/1.5 Roboto,sans-serif;
+    color: rgba(237,239,240,.8);
+    font-size: small;
+}
