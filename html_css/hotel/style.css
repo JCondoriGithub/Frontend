@@ -1,63 +1,85 @@
 body {
     margin: 0;
 }
-.head {
+header {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
     font-family: 'PT Sans', sans-serif;
     color: #242c4a;
-    margin-bottom: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .logo {
-    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .title {
+    margin-top: 0%;
     margin-bottom: 5px;
     font-size: x-large;
 }
 .subtitle {
     margin-top: 0;
-    margin-left: 13px;
+    margin-bottom: 0%;
     font-size: xx-small;
 }
 nav {
-    margin-top: 40px;
     font-size: small;
-    margin-left: 650px;
+    margin-left: 600px;
+}
+nav ul {
+    margin-top: 0%;
+}
+nav ul li {
+    display: inline;
+    margin-bottom: 0%;
+    cursor: pointer;
 }
 select {
     background: transparent;
     border: 0;
     color: #242c4a;
     margin-right: 30px;
+    cursor: pointer;
 }
 hr {
     border-width: 0.01em;
     border-color: rgba(0,0,255,0.10);
     margin: 0;
 }
+.logo2_rece {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .logo2 {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-top: 45px;
-    margin-left: 700px;
+    padding-right: 200px;
+    padding-left: 400px;
 }
 .stars {
-    margin-bottom: 8px;
+    margin-bottom: 20px;
 }
-.material-symbols-outlined {
+.stars .material-symbols-outlined {
     color: #f68059;
+    margin-top: 0%;
 }
 .hotelTitle {
     color: #242c4a;    
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     font: 400 42px/53px Butler;
 }
 .hotelSubtitle {
     color: #242c4a;
     opacity: .5;
+    font-family: 'PT Sans', sans-serif;
     font-size: small;
     text-transform: uppercase;
 }
@@ -65,11 +87,10 @@ hr {
     display: flex;
     text-align: center;
     margin-top: 70px;
-    margin-left: 240px;
 }
 .receText p{
     margin-bottom: 8px;
-    font-weight:bold;
+    font-weight: bold;
     color: #242c4a;
     margin-right: 10px;
 }
@@ -94,60 +115,73 @@ hr {
     font-weight: bold;
     font-size: large;
 }
-section {
-    display: flex;
-    font-family: 'PT Sans', sans-serif;
-}
 .images {
     margin-top: 50px;
     display: flex;
 }
 .listaMenu {
+    margin-top: 40px;
     display: flex;
     list-style-type: none;
     cursor: pointer;
+    justify-content: center;
     align-items: center;
-    margin-left: 350px;
-    margin-bottom: 0;;
-
 }
 .listaMenu li {
     margin-right: 70px;
+    margin-bottom: 0%;
     color: #242c4a;
     font-family: 'PT Sans', sans-serif;
-    margin-top: 15px;
     padding-bottom: 20px;
 }
 .sign {
     border-bottom: 1px solid #242c4a;
     font: 400 17px/19px Roboto,sans-serif;
 }
-.titleMenu {
+.tabUbica {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.divTitleTab {
+    display: flex;
+    width: 58%;
+    margin-top: 50px;
+}
+.titleTab {
     font-family: 'PT Sans', sans-serif;
     color:#242c4a;
     font-size: xx-large;
-    margin-top: 50px;
-    margin-left: 400px
+    margin-top: 0%;
+    margin-bottom: 15px;
 }
 .imageMap {
-    margin-left: 400px;
-}
-.imageMap img {
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .buttonMap {
     position: absolute;
     padding: 15px 45px;
     background: #242c4a;
     color: white;
-    margin-top: 160px;
-    margin-left: 460px;
     cursor: pointer;
 }
+.divTab {
+    width: 58%;
+    display: flex;
+    justify-content: left;
+    margin-top: 30px;
+}
 .div1 {
-    position: absolute;
-    margin-top: 375px;
-    margin-left: 400px;
+    margin-right: 23%;
+}
+.div1 .vicino {
+    font-family: 'PT Sans', sans-serif;
+    color: #242c4a;
+    font-size: larger;
+    margin: 0;
 }
 .div1 p {
     font-family: 'PT Sans', sans-serif;
@@ -161,12 +195,9 @@ section {
     color: #242c4a;
 }
 .div2 {
-    position: absolute;
-    margin-top: 447px;
-    margin-left: 960px;
     border-left: 0.01em solid rgba(0,0,255,0.10);
     padding-left: 23px;
-
+    margin-top: 40px;
 }
 .div2 p {
     font-family: 'PT Sans', sans-serif;
@@ -175,63 +206,62 @@ section {
     margin-bottom: 8px;
     margin-top: 0;
 }
-.div2 ul {
+.listaDiv2 {
     font-family: 'PT Sans', sans-serif;
+    padding-left: 14px;
+    list-style-type:disc;
+}
+.listaDiv2 li {
+    margin-bottom: 10px;
+}
+.listaDiv2 li a {
     font-size: 14px;
     color:#242c4a;
-    padding-left: 14px;
 }
-.div2 ul li {
-    margin-bottom: 15px;
+.listaDiv2 li a:hover {
+    border-bottom: 1px solid #242c4a;
 }
 footer {
-    height: 511px;
-    width: 100%;
+    margin-top: 45px;
     background: #242c4a;
-    margin-top: 800px;
-
+    font-family: 'PT Sans', sans-serif;
 }
 .divf {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-.fAzi {
+.divf_1 {
     margin-right: 130px;
     margin-top: 70px;
-    margin-bottom: 0;
-
 }
-.fAzi p {
-    font-family: 'PT Sans', sans-serif;
+.divf_1, p {
     color: white;
     font-size: 18px;
     letter-spacing: 1px;
 }
-.fAzi, ul {
+ul {
     list-style-type: none;
     text-decoration: none;
     padding: 0%;
     margin-bottom: 0;
-
 }
-.fAzi, ul a {
+.divf_1, ul a {
     text-decoration: none;
     font-size: 15px;
     color: rgb(196, 195, 195);   
-    font-family: 'PT Sans', sans-serif;
 }
-.fAzi, ul li {
+.divf_1 ul a:hover {
+    border-bottom: 1px solid  rgb(196, 195, 195);;
+}
+.divf_1, ul li {
     margin-bottom: 18px;
 }
-.fViag {
+.divf_2 {
     margin-top: 70px;
 }
-.fViag p {
-    font-family: 'PT Sans', sans-serif;
-    color: white;
-    font-size: 18px;
-    letter-spacing: 1px;
+.divf_2 ul a:hover {
+    border-bottom: 1px solid  rgb(196, 195, 195);;
 }
 .divf2 {
     margin-top: 70px;
@@ -239,8 +269,7 @@ footer {
     padding-left: 40px;
     border-left: 0.01em solid #414d68;
 }
-.newsL p {
-    font-family: 'PT Sans', sans-serif;
+.divf2_1 p {
     color: white;
     font-size: 18px;
 }
@@ -250,32 +279,39 @@ input {
     color: white;
     border: 1px solid #414d68;;
 }
-.newsL button {
+button {
     font-family: 'PT Sans', sans-serif;
     font-size: small;
     color: white;
-    background: #656b80;
+    background-color: #656b80;
     padding: 12px 50px;
     border: none;
+    cursor: pointer;
 }
-.fInfo {
+button:hover {
+    background-color: #656b80b9;
+    transition: background-color .3s;
+}
+.divf2_2 {
     display: flex;
     margin-top: 30px;
     padding-top: 30px;
     border-top: 0.01em solid #414d68;
 }
-.fInfoAv {
+.divf2_2_1 {
     margin-left: 10px;
 }
-.fInfoAv p {
+.divf2_2_1 p {
     font: 500 18px/21px Roboto,sans-serif;
     color: white;
     margin: 0;
 }
-.fInfoAv span {
-    font-family: 'PT Sans', sans-serif;
+.divf2_2_1 span {
     color: rgb(196, 195, 195);
     font-size: small;
+}
+.divf2_2_1 span:hover {
+    border-bottom: 1px solid  rgb(196, 195, 195);;
 }
 .divf3 {
     display: flex;
@@ -285,10 +321,9 @@ input {
     flex-direction: column;
 }
 .divf3_1 {
-    width: 1260px;
     display: flex;
-    border-top: 0.01em solid #414d68;
     justify-content: center;
+    border-top: 0.01em solid #414d68;
 }
 .material-symbols-outlined {
     color: hsla(0,0%,100%,.5);
@@ -296,35 +331,41 @@ input {
     margin-right: 10px;
 }
 .divf3 p {
-    font: 600 16px/26px Roboto,sans-serif;
+    font: 600 14px/26px Roboto,sans-serif;
     color: hsla(0,0%,100%,.5);
     margin-right: 270px;
 }
-.divf3l {
+.divf3_2 {
     margin-top: 20px;
 }
-.divf3l span {
+.divf3_2 span {
     font: normal 14px/1.5 Roboto,sans-serif;
     color: rgba(237,239,240,.8);
     cursor: pointer;
     margin-right: 30px;
 }
+.icons {
+    margin-top: 10px;
+}
 .icons svg {
-    color: red;
     margin-left: 10px;
+    color: red;
 }
 .divf4 {
     background: #181e36;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     margin-top: 30px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 .divf4 span {
-    margin-right: 645px;
+    margin-right: 575px;
     font: normal 14px/1.5 Roboto,sans-serif;
     color: rgba(237,239,240,.8);
     font-size: small;
+}
+.divf4Icons img {
+    margin-right: 10px;
 }

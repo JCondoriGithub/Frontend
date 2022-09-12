@@ -9,46 +9,52 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <body>
-    <header>
-        <div class="head">
+        <header>
             <div class="logo">
-                <p class="title">BRUSSELS</p>
-                <p class="subtitle">. HOTELS & RESORTS .</p>
+                <span class="title">BRUSSELS</span>
+                <span class="subtitle">. HOTELS & RESORTS .</span>
             </div>
             <nav>
-                <span style="margin-right: 30px;">PER GRUPPI</span>
+                <ul>
+                    <li><span style="margin-right: 35px;">PER GRUPPI</span></li>
 
-                <select name="select1" class="select1">
-                    <option value="CERCA UN HOTEL">CERCA UN HOTEL</option>
-                    <option value="Hotel a 5 stelle">Hotel a 5 stelle</option>
-                    <option value="Hotel a 4 stelle">Hotel a 4 stelle</option>
-                    <option value="Hotel a 3 stelle">Hotel a 3 stelle</option>
-                </select>
+                    <li>
+                        <select name="select1" class="select1">
+                            <option value="CERCA UN HOTEL">CERCA UN HOTEL</option>
+                            <option value="Hotel a 5 stelle">Hotel a 5 stelle</option>
+                            <option value="Hotel a 4 stelle">Hotel a 4 stelle</option>
+                            <option value="Hotel a 3 stelle">Hotel a 3 stelle</option>
+                        </select>
+                    </li>
 
-                <select name="select2" class="select1">
-                    <option value="VALUTA">VALUTA</option>
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                </select>
+                    <li>
+                        <select name="select2" class="select1">
+                            <option value="VALUTA">VALUTA</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                        </select>
+                    </li>
 
-                <select name="select3" class="select1">
-                    <option value="ITALIANO">ITALIANO</option>
-                    <option value="ENGLISH">ENGLISH</option>
-                    <option value="FRENCH">FRENCH</option>
-                    <option value="GERMAN">GERMAN</option>
-                </select>
+                    <li>
+                        <select name="select3" class="select1">
+                            <option value="ITALIANO">ITALIANO</option>
+                            <option value="ENGLISH">ENGLISH</option>
+                            <option value="FRENCH">FRENCH</option>
+                            <option value="GERMAN">GERMAN</option>
+                        </select>
+                    </li>
+                </ul>
             </nav>
-        </div>
-    </header>
+        </header>
 
     <hr>
 
-    <section>
+    <div class="logo2_rece">
         <div class="logo2">
             <div class="stars">
-            <span class="material-symbols-outlined">star</span>
-            <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
+                <span class="material-symbols-outlined">star</span>
             </div>
             
             <span class="hotelTitle">Maxhotel Bruxelles</span>
@@ -64,7 +70,7 @@
                 <span>7.9</span>
             </div>
         </div>
-    </section>
+    </div>
 
     <div class="images">
         <img src="./img/lavandino.jpg">
@@ -87,42 +93,46 @@
     </ul>
     <hr>
 
-    <p class="titleMenu">Ubicazione</p>
-    <div class="imageMap">
-        <img src="./img/map.jpg" width="1110px" height="360px">
-        <button class="buttonMap">VEDI SULLA MAPPA</button>
-    </div>
+    <div class="tabUbica">
+        <div class="divTitleTab">
+            <p class="titleTab">Ubicazione</p>
+        </div>
+        <div class="imageMap">
+            <img src="./img/map.jpg" width="1110px" height="360px">
+            <button class="buttonMap">VEDI SULLA MAPPA</button>
+        </div>
 
-    <div class="div1">
-        <p class="vicino" style="font-family: 'PT Sans', sans-serif;
-        color: #242c4a;
-        font-size: larger;">Vicino</p>
+        <div class="divTab">
+            <div class="div1">
+                <p class="vicino">Vicino</p>
 
-        <p style="margin-top: 30px;">AEREOPORTI</p>
-        <span>. Aeroporto di Bruxelles-Zaventem</span>
-        <span style="color:grey">12 km</span>
+                <p style="margin-top: 30px;">AEREOPORTI</p>
+                <span>. Aeroporto di Bruxelles-Zaventem</span>
+                <span style="color:grey">12 km</span>
 
-        <p style="margin-top: 28px;">STAZIONI FERROVIARIE</p>
-        <span>. Brussels Congress</span>
-        <span style="color:grey">600 m</span>
-    </div>
+                <p style="margin-top: 28px;">STAZIONI FERROVIARIE</p>
+                <span>. Brussels Congress</span>
+                <span style="color:grey">600 m</span>
+            </div>
 
-    <div class="div2">
-        <p>LUOGHI D'INTERESSE</p>
+            <div class="div2">
+                <p>LUOGHI D'INTERESSE</p>
 
-        <ul class="listaDiv2">
-            <li>Grand Place</li>
-            <li>Stazione Ferroviaria Gare du Midi</li>
-            <li>Mercatino di Natale Bruxelles</li>
-            <li>Square Brussels Meeting Centre</li>
-            <li>Stazione di Brussel-Centraal</li>
-            <li>Stazione di Bruxelles Sud</li>
-        </ul>
+                <ul class="listaDiv2">
+                    <li><a href="#">Grand Place</a></li>
+                    <li><a href="#">Stazione Ferroviaria Gare du Midi</a></li>
+                    <li><a href="#">Mercatino di Natale Bruxelles</a></li>
+                    <li><a href="#">Square Brussels Meeting Centre</a></li>
+                    <li><a href="#">Stazione di Brussel-Centraal</a></li>
+                    <li><a href="#">Stazione di Bruxelles Sud</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <footer>
         <div class="divf">
-            <div class="fAzi">
+            <div class="divf_1">
                 <p>AZIENDA</p>
                 <ul>
                     <li><a href="#">Chi siamo</a></li>
@@ -132,7 +142,7 @@
                 </ul>
             </div>
 
-                <div class="fViag">
+                <div class="divf_2">
                     <p>PER VIAGGIATORI</p>
                     <ul>
                         <li><a href="#">Consigli utili</a></li>
@@ -143,14 +153,14 @@
                 </div>
 
             <div class="divf2">
-                <div class="newsL">
+                <div class="divf2_1">
                     <p>ISCRIVITI ALLA NOSTRA NEWSLETTER</p>
                     <input placeholder="La tua email"><button>ISCRIVITI</button>
                 </div>
-                <div class="fInfo">
+                <div class="divf2_2">
                     <img src="./img/avatar.png" height="40px" width="40px">
                     
-                    <div class="fInfoAv">
+                    <div class="divf2_2_1">
                         <p>Ti manca qualche informazione?</p>
                         <span>Dicci cosa aggiungere ></span>
                     </div>
@@ -163,7 +173,7 @@
                     verified
                 </span>
                 <p>La più ampia scelta delle strutture uniche</p>
-                <div class="divf3l">
+                <div class="divf3_2">
                     <span>Politica sulla privacy</span>
                     <span>Termini e condizioni</span>
                     <span style="margin-right: 0;">Notifica dei diritti di autore</span>
@@ -183,8 +193,7 @@
             <div class="divf4Icons">
                 <img src="./img/paypal-img.svg">
                 <img src="./img/mastercard-img.svg" width="120px">
-                <img src="./img/visa-pay-img.svg" width="50px">
-
+                <img src="./img/visa-pay-img.svg" width="45px">
             </div>
         </div>
 
