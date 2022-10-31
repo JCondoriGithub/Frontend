@@ -17,7 +17,8 @@
                 <h1>The Wiki Cocktail</h1>
             </div>
 
-            <input type="text" name="search" placeholder="cerca cocktail">
+            <input type="text" name="search" placeholder="cerca cocktail" id="input">
+            <button type="submit" id="button">cerca</button>
         </nav>
     </header>
 
@@ -31,17 +32,32 @@
     <div class="titleCocktails">
         <h3>I cocktails</h3>
     </div>
-
-    <div class="products">
-        <div class="product" style="background-image: url(./img/prova.jpg)">
-            <div class="productInfo">
-                <p class="productName">Cocktail</p>
-                <a href="#">
-                    <div class="infoButton">MAGGIORI INFO</div>
-                </a>
+    
+    <div class="divProducts">
+        <div class="products">
+            <div class="product" style="background-image: url(./img/prova.jpg)">
+                <div class="productInfo">
+                    <p class="productName" id="Cocktail">Cocktail</p>
+                    <a href="#">
+                        <div class="infoButton">MAGGIORI INFO</div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
+
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                    <p id="textId">Some text in the Modal..</p>
+        </div>
+
+</div>
 
     <footer>
         <div class="contacts">

@@ -33,10 +33,13 @@ input {
 .titleCocktails {
     text-align: center;
 }
-
+.divProducts {
+    display: flex;
+    justify-content: center;
+}
 
 .products {
-    width: 100%;
+    width: 60%;
     margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
