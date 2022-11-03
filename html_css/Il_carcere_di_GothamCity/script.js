@@ -109,3 +109,58 @@ const dossiers = Object.values(criminali).map(function(value) {
 console.log(guards);
 console.log(criminals);
 console.log(dossiers);
+
+
+for(let i = 0; i < guards.length; i++) {
+
+    const tr = document.createElement("tr");
+
+    const th = document.createElement("th");
+    th.appendChild(document.createTextNode(i+1));
+    tr.appendChild(th);
+
+    const td = document.createElement("td");
+    td.appendChild(document.createTextNode(guards[i].nome));
+    tr.appendChild(td);
+
+    const td2 = document.createElement("td");
+    td2.appendChild(document.createTextNode(guards[i].cognome));
+    tr.appendChild(td2);
+
+    const td3 = document.createElement("td");
+    td3.appendChild(document.createTextNode(guards[i].eta));
+    tr.appendChild(td3);
+
+    const td4 = document.createElement("td");
+    td4.appendChild(document.createTextNode(guards[i].sesso));
+    tr.appendChild(td4);
+
+    document.getElementById("tbl_guards").appendChild(tr);
+}
+
+for(let i = 0; i < criminals.length; i++) {
+
+    const tr = document.createElement("tr");
+
+    const th = document.createElement("th");
+    th.appendChild(document.createTextNode(i+1));
+    tr.appendChild(th);
+
+    const td = document.createElement("td");
+    td.appendChild(document.createTextNode(criminals[i].nome));
+    tr.appendChild(td);
+
+    const td2 = document.createElement("td");
+    td2.appendChild(document.createTextNode(criminals[i].cognome));
+    tr.appendChild(td2);
+
+    const td3 = document.createElement("td");
+    td3.appendChild(document.createTextNode(criminals[i].eta));
+    tr.appendChild(td3);
+
+    const td4 = document.createElement("td");
+    td4.appendChild(document.createTextNode(criminals[i].sesso));
+    tr.appendChild(td4);
+
+    document.getElementById("tbl_prisoners").appendChild(tr);
+}
