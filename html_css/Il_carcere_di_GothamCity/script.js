@@ -94,6 +94,22 @@ const criminali = {
     }
 }
 
+
+function addCriminal(nome, cognome, eta, sesso) {
+
+    const nuovoCriminale = {
+        nome: nome,
+        cognome: cognome,
+        eta: eta,
+        sesso: sesso
+    }
+
+    criminali.nuovoCriminale = nuovoCriminale;
+}
+
+addCriminal("giovanni", "morty", 34, "maschio");
+
+
 const guards = Object.values(guardie).map(function(value) {
         return value;
     })
@@ -105,6 +121,7 @@ const criminals = Object.values(criminali).map(function(value) {
 const dossiers = Object.values(criminali).map(function(value) {
     return value.fascicolo;
 })
+
 
 console.log(guards);
 console.log(criminals);

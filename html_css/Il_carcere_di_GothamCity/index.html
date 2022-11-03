@@ -12,7 +12,7 @@
 <body>
     
     <div class="container">
-        <p class="fs-1 text-center fw-bold">carcere di Gotham</p>
+        <p class="fs-1 text-center fw-bold">Gotham Prison</p>
       
     <table class="table table-striped">
         <thead>
@@ -48,6 +48,46 @@
           </tbody>
 
     </table>
+
+    <br>
+    
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add a Criminal</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Criminal</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col">
+                              <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row g-3">
+                            <div class="col">
+                              <input type="number" class="form-control" placeholder="Age" aria-label="Age">
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" placeholder="Sex" aria-label="Sex">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div>
     
