@@ -30,7 +30,49 @@
         
     </table>
 
-    <br><br>
+    <br>
+
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add a Guard</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Guard</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row g-3">
+                            <div class="col">
+                              <input id="GNameBox" type="text" class="form-control" placeholder="First name" aria-label="First name">
+                            </div>
+                            <div class="col">
+                              <input id="GSurnameBox" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row g-3">
+                            <div class="col">
+                              <input id="GAgeBox" type="number" class="form-control" placeholder="Age" aria-label="Age">
+                            </div>
+                            <div class="col">
+                              <input id="GSexBox" type="text" class="form-control" placeholder="Sex" aria-label="Sex">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn_close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="btn_add_G" type="button" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <hr><hr>
+    <br>
 
     <table class="table table-dark table-striped">
 
@@ -51,13 +93,13 @@
 
     <br>
     
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add a Criminal</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">Add a Criminal</button>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add Criminal</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel2">Add Criminal</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

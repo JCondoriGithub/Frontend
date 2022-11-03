@@ -95,49 +95,22 @@ const criminali = {
 }
 
 
-document.getElementById("btn_add").addEventListener('click', function addCriminal() {
 
-    let nome = document.getElementById("nameBox").value;
-    let cognome = document.getElementById("surnameBox").value;
-    let eta = document.getElementById("ageBox").value;
-    let sesso = document.getElementById("sexBox").value;
-
-    const nuovoCriminale = {
-        nome: nome,
-        cognome: cognome,
-        eta: eta,
-        sesso: sesso
-    }
-
-    criminali.nuovoCriminale = nuovoCriminale;
-    updateTblCriminals();
-})
-
-
-const guards = Object.values(guardie).map(function(value) {
-        return value;
-    })
-
-const criminals = Object.values(criminali).map(function(value) {
-    return value;
-})
-
-const dossiers = Object.values(criminali).map(function(value) {
+const dossiers = Object.values(criminali).map(function (value) {
     return value.fascicolo;
 })
 
 
-console.log(guards);
-console.log(criminals);
-console.log(dossiers);
+let guards = Object.values(guardie).map(function (value) {
+    return value;
+})
 
-
-for(let i = 0; i < guards.length; i++) {
+for (let i = 0; i < guards.length; i++) {
 
     const tr = document.createElement("tr");
 
     const th = document.createElement("th");
-    th.appendChild(document.createTextNode(i+1));
+    th.appendChild(document.createTextNode(i + 1));
     tr.appendChild(th);
 
     const td = document.createElement("td");
@@ -159,37 +132,141 @@ for(let i = 0; i < guards.length; i++) {
     document.getElementById("tbl_guards").appendChild(tr);
 }
 
-function updateTblCriminals() {
+let criminals = Object.values(criminali).map(function (value) {
+    return value;
+})
 
-    const criminals = Object.values(criminali).map(function(value) {
+for (let i = 0; i < criminals.length; i++) {
+
+    const tr = document.createElement("tr");
+
+    const th = document.createElement("th");
+    th.appendChild(document.createTextNode(i + 1));
+    tr.appendChild(th);
+
+    const td = document.createElement("td");
+    td.appendChild(document.createTextNode(criminals[i].nome));
+    tr.appendChild(td);
+
+    const td2 = document.createElement("td");
+    td2.appendChild(document.createTextNode(criminals[i].cognome));
+    tr.appendChild(td2);
+
+    const td3 = document.createElement("td");
+    td3.appendChild(document.createTextNode(criminals[i].eta));
+    tr.appendChild(td3);
+
+    const td4 = document.createElement("td");
+    td4.appendChild(document.createTextNode(criminals[i].sesso));
+    tr.appendChild(td4);
+
+    document.getElementById("tbl_prisoners").appendChild(tr);
+}
+
+let countG = 1;
+document.getElementById("btn_add_G").addEventListener('click', function addGuard() {
+
+    let nome = document.getElementById("GNameBox").value;
+    let cognome = document.getElementById("GSurnameBox").value;
+    let eta = document.getElementById("GAgeBox").value;
+    let sesso = document.getElementById("GSexBox").value;
+
+    const nuovaGuardia = {
+        nome: nome,
+        cognome: cognome,
+        eta: eta,
+        sesso: sesso
+    }
+
+    let string = "newGuard";
+    guardie[string + countG] = nuovaGuardia;
+    countG++;
+
+    updateTblGuards();
+})
+
+function updateTblGuards() {
+
+    guards = Object.values(guardie).map(function (value) {
         return value;
     })
 
-    for(let i = 0; i < criminals.length; i++) {
+    const tr = document.createElement("tr");
 
-        const tr = document.createElement("tr");
+    const th = document.createElement("th");
+    th.appendChild(document.createTextNode(guards.length));
+    tr.appendChild(th);
 
-        const th = document.createElement("th");
-        th.appendChild(document.createTextNode(i+1));
-        tr.appendChild(th);
+    const td = document.createElement("td");
+    td.appendChild(document.createTextNode(guards[guards.length - 1].nome));
+    tr.appendChild(td);
 
-        const td = document.createElement("td");
-        td.appendChild(document.createTextNode(criminals[i].nome));
-        tr.appendChild(td);
+    const td2 = document.createElement("td");
+    td2.appendChild(document.createTextNode(guards[guards.length - 1].cognome));
+    tr.appendChild(td2);
 
-        const td2 = document.createElement("td");
-        td2.appendChild(document.createTextNode(criminals[i].cognome));
-        tr.appendChild(td2);
+    const td3 = document.createElement("td");
+    td3.appendChild(document.createTextNode(guards[guards.length - 1].eta));
+    tr.appendChild(td3);
 
-        const td3 = document.createElement("td");
-        td3.appendChild(document.createTextNode(criminals[i].eta));
-        tr.appendChild(td3);
+    const td4 = document.createElement("td");
+    td4.appendChild(document.createTextNode(guards[guards.length - 1].sesso));
+    tr.appendChild(td4);
 
-        const td4 = document.createElement("td");
-        td4.appendChild(document.createTextNode(criminals[i].sesso));
-        tr.appendChild(td4);
-
-        document.getElementById("tbl_prisoners").appendChild(tr);
-    }
-    console.log(criminals);
+    document.getElementById("tbl_guards").appendChild(tr);
 }
+
+let countC = 1;
+document.getElementById("btn_add").addEventListener('click', function addCriminal() {
+
+    let nome = document.getElementById("nameBox").value;
+    let cognome = document.getElementById("surnameBox").value;
+    let eta = document.getElementById("ageBox").value;
+    let sesso = document.getElementById("sexBox").value;
+
+    const nuovoCriminale = {
+        nome: nome,
+        cognome: cognome,
+        eta: eta,
+        sesso: sesso
+    }
+
+    let string = "newCriminal";
+    criminali[string + countC] = nuovoCriminale;
+    countC++;
+
+    updateTblCriminals();
+})
+
+function updateTblCriminals() {
+
+    criminals = Object.values(criminali).map(function (value) {
+        return value;
+    })
+
+    const tr = document.createElement("tr");
+
+    const th = document.createElement("th");
+    th.appendChild(document.createTextNode(criminals.length));
+    tr.appendChild(th);
+
+    const td = document.createElement("td");
+    td.appendChild(document.createTextNode(criminals[criminals.length - 1].nome));
+    tr.appendChild(td);
+
+    const td2 = document.createElement("td");
+    td2.appendChild(document.createTextNode(criminals[criminals.length - 1].cognome));
+    tr.appendChild(td2);
+
+    const td3 = document.createElement("td");
+    td3.appendChild(document.createTextNode(criminals[criminals.length - 1].eta));
+    tr.appendChild(td3);
+
+    const td4 = document.createElement("td");
+    td4.appendChild(document.createTextNode(criminals[criminals.length - 1].sesso));
+    tr.appendChild(td4);
+
+    document.getElementById("tbl_prisoners").appendChild(tr);
+}
+
+
