@@ -95,12 +95,6 @@ const criminali = {
 }
 
 
-
-const dossiers = Object.values(criminali).map(function (value) {
-    return value.fascicolo;
-})
-
-
 let guards = Object.values(guardie).map(function (value) {
     return value;
 })
@@ -161,6 +155,50 @@ for (let i = 0; i < criminals.length; i++) {
     tr.appendChild(td4);
 
     document.getElementById("tbl_prisoners").appendChild(tr);
+}
+
+const dossiers = Object.values(criminali).map(function (value) {
+    return value.fascicolo;
+})
+
+for(let i = 0; i < criminals.length; i++) {
+
+    const divCard = document.createElement("div");
+    divCard.className = "card";
+    divCard.style = "width:20rem; margin-right: 8%; margin-bottom: 3%;";
+
+    const divCardH = document.createElement("div");
+    divCardH.className = "card-header";
+    divCardH.appendChild(document.createTextNode("NAME: " + criminals[i].nome + ", SURNAME: " + criminals[i].cognome));
+    divCard.appendChild(divCardH);
+
+    const ul = document.createElement("ul");
+    ul.className = "list-group list-group-flush";
+
+    const li = document.createElement("li");
+    li.className = "list-group-item";
+    li.appendChild(document.createTextNode("CODE: " + criminals[i].fascicolo.id));
+    ul.appendChild(li);
+
+    const li2 = document.createElement("li");
+    li2.className = "list-group-item";
+    li2.appendChild(document.createTextNode("INCARCERATION: " + criminals[i].fascicolo.carcerazione));
+    ul.appendChild(li2);
+
+    const li3 = document.createElement("li");
+    li3.className = "list-group-item";
+    li3.appendChild(document.createTextNode("RELEASE: " + criminals[i].fascicolo.scarcerazione));
+    ul.appendChild(li3);
+
+    const li4 = document.createElement("li");
+    li4.className = "list-group-item";
+    li4.appendChild(document.createTextNode("CRIMES: "));
+    for(let j = 0; j < criminals[i].fascicolo.crimini.length; j++) 
+        li4.appendChild(document.createTextNode(criminals[i].fascicolo.crimini[j] + ", "));
+    ul.appendChild(li4);
+
+    divCard.appendChild(ul);
+    document.getElementById("divCards").appendChild(divCard);
 }
 
 let countG = 1;

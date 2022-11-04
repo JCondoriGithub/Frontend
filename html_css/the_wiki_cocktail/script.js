@@ -4,7 +4,7 @@ let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
 fetch(url)
     .then(response => response.json())
     .then(json => {
-        console.log(json);
+        //console.log(json);
         
         for(let i = 0; i < json.drinks.length; i++) {
 
@@ -18,6 +18,7 @@ fetch(url)
             const productName = document.createElement("p");
             productName.className = "productName";
             productName.id = "Cocktail";
+            let drinkName = json.drinks[i].strDrink;
             productName.appendChild(document.createTextNode(json.drinks[i].strDrink));
             productInfo.appendChild(productName);
 
@@ -31,7 +32,14 @@ fetch(url)
 
             product.appendChild(productInfo);
             document.querySelector(".products").appendChild(product);
-        }
+            infoButton.addEventListener('click', function(){
+            fetch(`${url}s=${drinkName}`)
+                .then(res=> res.json())
+                .then(Json => {
+                    console.log(Json);
+                })
+        })
+    }
     })
 
 
