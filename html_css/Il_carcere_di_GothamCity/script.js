@@ -262,6 +262,20 @@ document.getElementById("btn_add").addEventListener('click', function addCrimina
     let eta = document.getElementById("ageBox").value;
     let sesso = document.getElementById("sexBox").value;
 
+    let code = document.getElementById("codeBox").value;
+    let dateInc = document.getElementById("incarcerationBox").value;
+    let dateRelease = document.getElementById("releaseBox").value;
+
+    const crimes = [];
+    for(let i = 0; i < 6; i++) {
+
+        let j = i +1;
+        let crime = document.getElementById("crimeBox" + j).value;
+        if(crime != "")
+            crimes.push(crime);
+    }
+
+    
     const nuovoCriminale = {
         nome: nome,
         cognome: cognome,
@@ -269,11 +283,21 @@ document.getElementById("btn_add").addEventListener('click', function addCrimina
         sesso: sesso
     }
 
+    const nuovoFascicolo = {
+        id: code,
+        carcerazione: dateInc,
+        scarcerazione: dateRelease,
+        crimini: crimes
+    }
+
+    nuovoCriminale.fascicolo = nuovoFascicolo;
+
     let string = "newCriminal";
     criminali[string + countC] = nuovoCriminale;
     countC++;
 
     updateTblCriminals();
+    updateFiles();
 })
 
 function updateTblCriminals() {
@@ -305,6 +329,50 @@ function updateTblCriminals() {
     tr.appendChild(td4);
 
     document.getElementById("tbl_prisoners").appendChild(tr);
+
+    console.log(criminals);
 }
 
+function updateFiles() {
 
+    criminals = Object.values(criminali).map(function (value) {
+        return value;
+    })
+
+    const divCard = document.createElement("div");
+    divCard.className = "card";
+    divCard.style = "width:20rem; margin-right: 8%; margin-bottom: 3%;";
+
+    const divCardH = document.createElement("div");
+    divCardH.className = "card-header";
+    divCardH.appendChild(document.createTextNode("NAME: " + criminals[criminals.length - 1].nome + ", SURNAME: " + criminals[criminals.length - 1].cognome));
+    divCard.appendChild(divCardH);
+
+    const ul = document.createElement("ul");
+    ul.className = "list-group list-group-flush";
+
+    const li = document.createElement("li");
+    li.className = "list-group-item";
+    li.appendChild(document.createTextNode("CODE: " + criminals[criminals.length - 1].fascicolo.id));
+    ul.appendChild(li);
+
+    const li2 = document.createElement("li");
+    li2.className = "list-group-item";
+    li2.appendChild(document.createTextNode("INCARCERATION: " + criminals[criminals.length - 1].fascicolo.carcerazione));
+    ul.appendChild(li2);
+
+    const li3 = document.createElement("li");
+    li3.className = "list-group-item";
+    li3.appendChild(document.createTextNode("RELEASE: " + criminals[criminals.length - 1].fascicolo.scarcerazione));
+    ul.appendChild(li3);
+
+    const li4 = document.createElement("li");
+    li4.className = "list-group-item";
+    li4.appendChild(document.createTextNode("CRIMES: "));
+    for(let j = 0; j < criminals[criminals.length - 1].fascicolo.crimini.length; j++) 
+        li4.appendChild(document.createTextNode(criminals[criminals.length - 1].fascicolo.crimini[j] + ", "));
+    ul.appendChild(li4);
+
+    divCard.appendChild(ul);
+    document.getElementById("divCards").appendChild(divCard);
+}
