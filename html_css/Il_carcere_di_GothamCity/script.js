@@ -95,71 +95,150 @@ const criminali = {
 }
 
 
-let guards = Object.values(guardie).map(function (value) {
-    return value;
-})
-
-for (let i = 0; i < guards.length; i++) {
-
-    const tr = document.createElement("tr");
-
-    const th = document.createElement("th");
-    th.appendChild(document.createTextNode(i + 1));
-    tr.appendChild(th);
-
-    const td = document.createElement("td");
-    td.appendChild(document.createTextNode(guards[i].nome));
-    tr.appendChild(td);
-
-    const td2 = document.createElement("td");
-    td2.appendChild(document.createTextNode(guards[i].cognome));
-    tr.appendChild(td2);
-
-    const td3 = document.createElement("td");
-    td3.appendChild(document.createTextNode(guards[i].eta));
-    tr.appendChild(td3);
-
-    const td4 = document.createElement("td");
-    td4.appendChild(document.createTextNode(guards[i].sesso));
-    tr.appendChild(td4);
-
-    document.getElementById("tbl_guards").appendChild(tr);
+function getGuards(guards) {
+    return Object.values(guards).map(function (value) {
+        return value;
+    })
 }
 
-let criminals = Object.values(criminali).map(function (value) {
-    return value;
-})
-
-for (let i = 0; i < criminals.length; i++) {
-
-    const tr = document.createElement("tr");
-
-    const th = document.createElement("th");
-    th.appendChild(document.createTextNode(i + 1));
-    tr.appendChild(th);
-
-    const td = document.createElement("td");
-    td.appendChild(document.createTextNode(criminals[i].nome));
-    tr.appendChild(td);
-
-    const td2 = document.createElement("td");
-    td2.appendChild(document.createTextNode(criminals[i].cognome));
-    tr.appendChild(td2);
-
-    const td3 = document.createElement("td");
-    td3.appendChild(document.createTextNode(criminals[i].eta));
-    tr.appendChild(td3);
-
-    const td4 = document.createElement("td");
-    td4.appendChild(document.createTextNode(criminals[i].sesso));
-    tr.appendChild(td4);
-
-    document.getElementById("tbl_prisoners").appendChild(tr);
+function getCriminals(criminali) {
+    return Object.values(criminali).map(function (value) {
+        return value;
+    })
 }
 
-const dossiers = Object.values(criminali).map(function (value) {
-    return value.fascicolo;
-})
+function getFiles(criminali) {
+    return Object.values(criminali).map(function (value) {
+        return value.fascicolo;
+    })
+}
+
+const guards = getGuards(guardie);
+
+function createTableGuards(guards) {
+
+    for (let i = 0; i < guards.length; i++) {
+
+        const tr = document.createElement("tr");
+
+        const th = document.createElement("th");
+        th.appendChild(document.createTextNode(i + 1));
+        tr.appendChild(th);
+
+        const td = document.createElement("td");
+        td.appendChild(document.createTextNode(guards[i].nome));
+        tr.appendChild(td);
+
+        const td2 = document.createElement("td");
+        td2.appendChild(document.createTextNode(guards[i].cognome));
+        tr.appendChild(td2);
+
+        const td3 = document.createElement("td");
+        td3.appendChild(document.createTextNode(guards[i].eta));
+        tr.appendChild(td3);
+
+        const td4 = document.createElement("td");
+        td4.appendChild(document.createTextNode(guards[i].sesso));
+        tr.appendChild(td4);
+
+        document.getElementById("tbl_guards").appendChild(tr);
+    }
+}
+
+createTableGuards(guards);
+
+function deleteTable() {
+
+    const newtbody = document.createElement("tbody");
+    newtbody.id = "tbl_guards";
+    const oldtbody = document.getElementById("tbl_guards");
+    document.getElementById("tbl1").replaceChild(newtbody, oldtbody);
+}
+
+document.getElementById("inputGuards").addEventListener('keyup', searchGuard)
+
+function searchGuard() {
+
+    deleteTable();
+
+    let chars = document.getElementById("inputGuards").value;
+    const guards = getGuards(guardie);
+    const guards1 = guards.filter(filterTable(chars));
+    createTableGuards(guards1);
+}
+
+function filterTable(chars) {
+    return function(value) {
+        return value.nome.toUpperCase().includes(chars.toUpperCase()) || value.cognome.toUpperCase().includes(chars.toUpperCase())
+         || value.sesso.toUpperCase().includes(chars.toUpperCase());
+    }
+}
+
+
+const criminals = getCriminals(criminali);
+
+function createTableCriminals(criminals) {
+
+    for (let i = 0; i < criminals.length; i++) {
+
+        const tr = document.createElement("tr");
+
+        const th = document.createElement("th");
+        th.appendChild(document.createTextNode(i + 1));
+        tr.appendChild(th);
+
+        const td = document.createElement("td");
+        td.appendChild(document.createTextNode(criminals[i].nome));
+        tr.appendChild(td);
+
+        const td2 = document.createElement("td");
+        td2.appendChild(document.createTextNode(criminals[i].cognome));
+        tr.appendChild(td2);
+
+        const td3 = document.createElement("td");
+        td3.appendChild(document.createTextNode(criminals[i].eta));
+        tr.appendChild(td3);
+
+        const td4 = document.createElement("td");
+        td4.appendChild(document.createTextNode(criminals[i].sesso));
+        tr.appendChild(td4);
+
+        document.getElementById("tbl_prisoners").appendChild(tr);
+    }
+}
+
+createTableCriminals(criminals);
+
+function deleteTable2() {
+
+    const newtbody = document.createElement("tbody");
+    newtbody.id = "tbl_prisoners";
+    const oldtbody = document.getElementById("tbl_prisoners");
+    document.getElementById("tbl2").replaceChild(newtbody, oldtbody);
+}
+
+document.getElementById("inputCriminals").addEventListener('keyup', searchCriminal)
+
+function searchCriminal() {
+
+    deleteTable2();
+
+    let chars = document.getElementById("inputCriminals").value;
+    const criminals = getCriminals(criminali);
+    const criminals1 = criminals.filter(filterTable(chars));
+    createTableCriminals(criminals1);
+}
+
+/*function filterTable(chars) {
+    return function(value) {
+        return value.nome.toUpperCase().includes(chars.toUpperCase()) || value.cognome.toUpperCase().includes(chars.toUpperCase())
+         || value.sesso.toUpperCase().includes(chars.toUpperCase());
+    }
+}*/
+
+
+const files = getFiles(criminals)
+
 
 for(let i = 0; i < criminals.length; i++) {
 
@@ -225,7 +304,7 @@ document.getElementById("btn_add_G").addEventListener('click', function addGuard
 
 function updateTblGuards() {
 
-    guards = Object.values(guardie).map(function (value) {
+    const guards = Object.values(guardie).map(function (value) {
         return value;
     })
 
@@ -302,7 +381,7 @@ document.getElementById("btn_add").addEventListener('click', function addCrimina
 
 function updateTblCriminals() {
 
-    criminals = Object.values(criminali).map(function (value) {
+    const criminals = Object.values(criminali).map(function (value) {
         return value;
     })
 
@@ -335,7 +414,7 @@ function updateTblCriminals() {
 
 function updateFiles() {
 
-    criminals = Object.values(criminali).map(function (value) {
+    const criminals = Object.values(criminali).map(function (value) {
         return value;
     })
 

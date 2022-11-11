@@ -14,7 +14,16 @@
     <div class="container">
         <p class="fs-1 text-center fw-bold">Gotham Prison</p>
       
-    <table class="table table-striped">
+        <nav class="navbar bg-light">
+          <div class="container-fluid">
+            <form class="d-flex" role="search">
+              <input id="inputGuards" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+
+    <table id="tbl1" class="table table-striped">
         <thead>
             <tr>
               <th scope="col">ID</th>
@@ -74,7 +83,16 @@
     <hr><hr>
     <br>
 
-    <table class="table table-dark table-striped">
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <form class="d-flex" role="search">
+          <input id="inputCriminals" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <table id="tbl2" class="table table-dark table-striped">
 
         <thead>
             <tr>
