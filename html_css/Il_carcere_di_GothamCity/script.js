@@ -41,6 +41,7 @@ const criminali = {
             id: 33641232,
             carcerazione: "21-03-2022",
             scarcerazione: "UNDEFINED",
+            stato: "evaso",
             crimini: ["omicidi", "rapine", "terrorismo", "collaborazione mafiosa"]
         }
     },
@@ -53,6 +54,7 @@ const criminali = {
             id: 97712330,
             carcerazione: "21-03-2019",
             scarcerazione: "04-09-2030",
+            stato: "detenuta",
             crimini: ["omicidi", "rapine", "disturbo alla quiete"]
         }
     },
@@ -65,6 +67,7 @@ const criminali = {
             id: 24294674,
             carcerazione: "27-12-2014",
             scarcerazione: "30-11-2025",
+            stato: "detenuto",
             crimini: ["omicidi", "terrorismo", "collaborazione mafiosa"]
         }
     },
@@ -77,6 +80,7 @@ const criminali = {
             id: 34650745,
             carcerazione: "11-07-2018",
             scarcerazione: "28-02-2023",
+            stato: "detenuto",
             crimini: ["omicidi", "rapine", "terrorismo"]
         }
     },
@@ -89,6 +93,7 @@ const criminali = {
             id: 12664200,
             carcerazione: "31-05-2020",
             scarcerazione: "09-10-2030",
+            stato: "deceduto",
             crimini: ["omicidi", "terrorismo"]
         }
     }
@@ -262,6 +267,11 @@ function createTablesFiles(criminals) {
         li3.appendChild(document.createTextNode("RELEASE: " + criminals[i].fascicolo.scarcerazione));
         ul.appendChild(li3);
 
+        const li5 = document.createElement("li");
+        li5.className = "list-group-item";
+        li5.appendChild(document.createTextNode("STATE: " + criminals[i].fascicolo.stato));
+        ul.appendChild(li5);
+
         const li4 = document.createElement("li");
         li4.className = "list-group-item";
         li4.appendChild(document.createTextNode("CRIMES: "));
@@ -362,6 +372,7 @@ document.getElementById("btn_add").addEventListener('click', function addCrimina
     let code = document.getElementById("codeBox").value;
     let dateInc = document.getElementById("incarcerationBox").value;
     let dateRelease = document.getElementById("releaseBox").value;
+    let state = document.getElementById("stateBox").value;
 
     const crimes = [];
     for(let i = 0; i < 6; i++) {
@@ -384,6 +395,7 @@ document.getElementById("btn_add").addEventListener('click', function addCrimina
         id: code,
         carcerazione: dateInc,
         scarcerazione: dateRelease,
+        stato: state,
         crimini: crimes
     }
 
@@ -462,6 +474,11 @@ function updateFiles() {
     li3.className = "list-group-item";
     li3.appendChild(document.createTextNode("RELEASE: " + criminals[criminals.length - 1].fascicolo.scarcerazione));
     ul.appendChild(li3);
+
+    const li5 = document.createElement("li");
+    li5.className = "list-group-item";
+    li5.appendChild(document.createTextNode("STATE: " + criminals[criminals.length - 1].fascicolo.stato));
+    ul.appendChild(li5);
 
     const li4 = document.createElement("li");
     li4.className = "list-group-item";
