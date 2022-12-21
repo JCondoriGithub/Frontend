@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background: #6495ED;
+    background-color: #6495ED;
 }
 nav {
     display: flex;
@@ -25,7 +25,7 @@ input {
 }
 .presentation {
     text-align: center;
-    width: 40%;
+    width: 100%;
     padding: 2% 30%;
     font-family: 'Dangrek', cursive;
     font-size: larger;
@@ -39,7 +39,7 @@ input {
 }
 
 .products {
-    width: 60%;
+    width: 80%;
     margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -127,7 +127,7 @@ a {
 
 footer {
     margin-top: 5%;
-    background: #0f19a334;
+    /*background: #0f19a334;*/
     display: flex;
     justify-content: center;
     font-family: 'Dangrek', cursive;

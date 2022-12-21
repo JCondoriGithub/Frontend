@@ -1,12 +1,11 @@
 let button = document.getElementById("button");
 let bottone = null;
-let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita";
+let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
 fetch(url)
     .then(response => response.json())
     .then(json => {
-        //console.log(json);
-        
-        for(let i = 0; i < json.drinks.length; i++) {
+
+        for (let i = 0; i < json.drinks.length; i++) {
 
             const product = document.createElement("div");
             product.className = "product";
@@ -25,56 +24,58 @@ fetch(url)
             const link = document.createElement("a");
             link.href = "#";
             const infoButton = document.createElement("div");
-            infoButton.className = "infoButton";
+            infoButton.id = "infoButton";
+            infoButton.className = "infobutton";
+            infoButton.type = "button";
+            infoButton.addEventListener("click", function() {showModal('Instructions', json.drinks[i].strInstructions)});
             infoButton.appendChild(document.createTextNode("MAGGIORI INFO"));
             link.appendChild(infoButton);
             productInfo.appendChild(link);
 
             product.appendChild(productInfo);
             document.querySelector(".products").appendChild(product);
-            infoButton.addEventListener('click', function(){
-            fetch(`${url}s=${drinkName}`)
-                .then(res=> res.json())
-                .then(Json => {
-                    console.log(Json);
-                })
-        })
+            infoButton.addEventListener('click', function () {
+                fetch(`${url}s=${drinkName}`)
+                    .then(res => res.json())
+                    .then(Json => {
+                        console.log(Json);
+                    })
+            })
+        }
+    })
+
+
+var modalWrap = null;
+const showModal = (title, description) => {
+
+    if (modalWrap != null) {
+        modalWrap.remove();
     }
-    })
 
-
-/*function searchApi (button){
-    let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?"
-    fetch(`${url}s=${button}`)
-    .then(response => response.json())
-    .then(json => {
-        let toReturn = {}
-        let array = json.drinks;
-       toReturn = array.shift();
-       console.log(toReturn);
-        let toappend = document.getElementById("infoButton");
-        toappend.addEventListener('onclick', function(){
-            let cocktailName = document.getElementById("textId");
-            let ALMENODAMMIUNDEFINED = toReturn.strDrink;
-            console.log(ALMENODAMMIUNDEFINED)
-        })
-
-
+    modalWrap = document.createElement("div");
+    modalWrap.innerHTML = ` 
         
-        //result.forEach((Element)=>{
-            //let modal = document.getElementById()
-        //})
+        <div class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">${title}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>${description}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    `;
 
-        
-    })
+    document.body.append(modalWrap);
+
+    var modal = new bootstrap.Modal(modalWrap.querySelector(".modal"));
+    modal.show();
 }
-searchApi(button);
-
-
-
-button.addEventListener('click', function(){
-    bottone = document.getElementById("input").value;
-    let nameToSosbuite = document.getElementById("Cocktail")
-    nameToSosbuite.innerHTML = bottone
-    searchApi(bottone);
-})*/
