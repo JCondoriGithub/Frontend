@@ -17,15 +17,29 @@ fetch(url)
             const productName = document.createElement("p");
             productName.className = "productName";
             productName.id = "Cocktail";
-            let drinkName = json.drinks[i].strDrink;
             productName.appendChild(document.createTextNode(json.drinks[i].strDrink));
             productInfo.appendChild(productName);
+
+            const ingredients = [];
+            let ingredient = "value"
+            let count = 1;
+
+            while(ingredient != null) {
+            
+                ingredients.push(json.drinks[i]["strIngredient" + count]);
+                ingredient = json.drinks[i]["strIngredient" + count];
+                count++;
+            };
+            console.log(ingredients);
+            ingredients.pop();
 
             const div = document.createElement("div");
             const infoButton = document.createElement("button");
             infoButton.type = "button";
             infoButton.className = "btn btn-outline-light mt-3 mb-4";
-            infoButton.addEventListener("click", function() {showModal(json.drinks[i].strInstructions, json.drinks[i].strInstructionsES, json.drinks[i].strInstructionsDE, json.drinks[i].strInstructionsIT)});
+            infoButton.addEventListener("click", function() {
+                showModal(json.drinks[i].strInstructions, json.drinks[i].strInstructionsES, json.drinks[i].strInstructionsDE, json.drinks[i].strInstructionsIT, ingredients)
+            });
             infoButton.appendChild(document.createTextNode("MAGGIORI INFO"));
 
             div.appendChild(infoButton);
@@ -36,7 +50,7 @@ fetch(url)
     })
 
 var modalWrap = null;
-const showModal = (description1, description2, description3, description4) => {
+const showModal = (description1, description2, description3, description4, ingredients) => {
 
     if (modalWrap != null) {
         modalWrap.remove();
@@ -57,7 +71,7 @@ const showModal = (description1, description2, description3, description4) => {
                     <h2 class="fs-5">English</h2>
                     <p>${description1}</p>
                     <hr>
-                    <h2 class="fs-5">Espanol</h2>
+                    <h2 class="fs-5">Español</h2>
                     <p>${description2}</p>
                     <hr>
                     <h2 class="fs-5">Deutsch</h2>
@@ -69,7 +83,7 @@ const showModal = (description1, description2, description3, description4) => {
                 <hr>
                 <div class="modal-body">
                     <h2 class="fs-5">Ingredienti</h2>
-                    <p></p>
+                    <p>${ingredients.join(', ')}</p>
                 </div>
                 </div>
             </div>
