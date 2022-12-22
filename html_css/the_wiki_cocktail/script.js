@@ -21,32 +21,22 @@ fetch(url)
             productName.appendChild(document.createTextNode(json.drinks[i].strDrink));
             productInfo.appendChild(productName);
 
-            const link = document.createElement("a");
-            link.href = "#";
-            const infoButton = document.createElement("div");
-            infoButton.id = "infoButton";
-            infoButton.className = "infobutton";
+            const div = document.createElement("div");
+            const infoButton = document.createElement("button");
             infoButton.type = "button";
-            infoButton.addEventListener("click", function() {showModal('Instructions', json.drinks[i].strInstructions)});
+            infoButton.className = "btn btn-outline-light mt-3 mb-4";
+            infoButton.addEventListener("click", function() {showModal(json.drinks[i].strInstructions, json.drinks[i].strInstructionsES, json.drinks[i].strInstructionsDE, json.drinks[i].strInstructionsIT)});
             infoButton.appendChild(document.createTextNode("MAGGIORI INFO"));
-            link.appendChild(infoButton);
-            productInfo.appendChild(link);
 
+            div.appendChild(infoButton);
+            productInfo.appendChild(div);
             product.appendChild(productInfo);
             document.querySelector(".products").appendChild(product);
-            infoButton.addEventListener('click', function () {
-                fetch(`${url}s=${drinkName}`)
-                    .then(res => res.json())
-                    .then(Json => {
-                        console.log(Json);
-                    })
-            })
         }
     })
 
-
 var modalWrap = null;
-const showModal = (title, description) => {
+const showModal = (description1, description2, description3, description4) => {
 
     if (modalWrap != null) {
         modalWrap.remove();
@@ -59,15 +49,27 @@ const showModal = (title, description) => {
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">${title}</h5>
+                    <h5 class="modal-title">Istruzioni</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
-                    <p>${description}</p>
+                    <h2 class="fs-5">English</h2>
+                    <p>${description1}</p>
+                    <hr>
+                    <h2 class="fs-5">Espanol</h2>
+                    <p>${description2}</p>
+                    <hr>
+                    <h2 class="fs-5">Deutsch</h2>
+                    <p>${description3}</p>
+                    <hr>
+                    <h2 class="fs-5">Italiano</h2>
+                    <p>${description4}</p>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                <hr>
+                <div class="modal-body">
+                    <h2 class="fs-5">Ingredienti</h2>
+                    <p></p>
                 </div>
                 </div>
             </div>

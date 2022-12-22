@@ -1,12 +1,7 @@
-body {
-    margin: 0;
-    background-color: #6495ED;
-}
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0f19a334;
 }
 .logo {
     display: flex;
@@ -68,7 +63,7 @@ input {
 .productInfo:hover {
     opacity: 1;
 }
-.productInfo:hover .productName, .productInfo:hover .infoButton {
+.productInfo:hover .productName, .productInfo:hover {
     transform: translateY(0);
 }
 .productName {
@@ -80,24 +75,6 @@ input {
     text-align: center;
     transition: all 0.2s ease-in-out;
     transform: translateY(-20px);
-}
-.infoButton {
-    width: fit-content;
-    padding: 7px 20px;
-    margin: 20% auto;
-    border: 2px solid white;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    transition: all 0.2s ease-in-out;
-    transform: translateY(-20px);
-}
-.infoButton:hover {
-    background-color: #323232;
-    border: 2px solid #323232
-}
-a {
-    text-decoration: none;
 }
 @media screen and (max-width: 400px) {
     .products{
@@ -111,15 +88,12 @@ a {
     .productName{
         font-size: 15px;
     }
-    .infoButton{
-        font-size: 10px;
-    }
 }
 @media (hover:none) {
    .productInfo{
         opacity: 1;
    } 
-   .infoButton, .productName{
+   .productName{
         transform: translateY(0);
    }
 }
@@ -127,7 +101,6 @@ a {
 
 footer {
     margin-top: 5%;
-    /*background: #0f19a334;*/
     display: flex;
     justify-content: center;
     font-family: 'Dangrek', cursive;
@@ -149,7 +122,7 @@ footer {
 .infoSite {
     display: flex;
     align-items: center;
-    margin: 0% 10%;
+    margin: 0% 5%;
 }
 .newsLetter {
     display: flex;
