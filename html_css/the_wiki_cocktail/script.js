@@ -1,10 +1,11 @@
+// funzione per la richiesta fetch
 async function myFetch() {
     let response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a');
     let json = await response.json();
-    console.log(json.drinks);
     return json.drinks;
 }
 
+// modale dinamica
 var modalWrap = null;
 const showModal = (description1, description2, description3, description4, ingredients) => {
 
@@ -17,10 +18,10 @@ const showModal = (description1, description2, description3, description4, ingre
         
         <div class="modal fade" tabindex="-1">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content p-3 mb-2 bg-black text-white">
                 <div class="modal-header">
                     <h5 class="modal-title">Istruzioni</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close p-3 mb-2 bg-white text-dark" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body">
@@ -52,6 +53,7 @@ const showModal = (description1, description2, description3, description4, ingre
     modal.show();
 }
 
+// funzione per creare le carte dinamiche tramite un array filtrato
 function createCards(json) {
 
     for (let i = 0; i < json.length; i++) {
@@ -68,7 +70,6 @@ function createCards(json) {
         productName.id = "Cocktail";
         productName.appendChild(document.createTextNode(json[i].strDrink));
         productInfo.appendChild(productName);
-        console.log('gne',productName)
 
         const ingredients = [];
         let ingredient = "value"
@@ -98,6 +99,7 @@ function createCards(json) {
     }
 }
 
+// funzione per cancellare tutte le carte
 function deleteCards() {
 
     const newProducts = document.createElement("div");
@@ -106,12 +108,14 @@ function deleteCards() {
     document.querySelector(".divProducts").replaceChild(newProducts, oldProducts);
 }
 
+// funzione che filtra gli elementi di un array
 function filterCards(chars) {
     return function(value) {
         return value.strDrink.toUpperCase().includes(chars.toUpperCase())
     }
 }
 
+// all'evento 'keyup', si esegue la funzione 'searchCocktail'
 document.getElementById("input").addEventListener('keyup', searchCocktail);
 
 async function searchCocktail() {
@@ -125,9 +129,11 @@ async function searchCocktail() {
     createCards(result);
 }
 
+// il valore di ritorno della funzione si inserisce nella variabile
 let arrayRes;
 arrayRes = myFetch();
 
+// funzione per creare le carte dinamiche con il json NON ancora filtrato
 async function createCardsJson() {
 
     let json = await arrayRes;

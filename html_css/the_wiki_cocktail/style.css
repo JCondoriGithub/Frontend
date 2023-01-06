@@ -21,12 +21,15 @@ input {
 .presentation {
     text-align: center;
     width: 100%;
-    padding: 2% 30%;
+    padding: 2% 10%;
     font-family: 'Dangrek', cursive;
     font-size: larger;
 }
 .titleCocktails {
     text-align: center;
+    font-family: 'Dangrek', cursive;
+    font-size: xx-large;
+    margin-top: 4%;
 }
 .divProducts {
     display: flex;
@@ -34,7 +37,7 @@ input {
 }
 
 .products {
-    width: 80%;
+    width: 100%;
     margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
