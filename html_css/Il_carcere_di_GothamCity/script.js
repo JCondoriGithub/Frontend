@@ -69,7 +69,7 @@ const criminali = {
             id: 24294674,
             incarceration: "27-12-2014",
             release: "30-11-2025",
-            state: "detenuto",
+            state: "detained",
             crimes: ["omicidi", "terrorismo", "collaborazione mafiosa"]
         }
     },
@@ -82,7 +82,7 @@ const criminali = {
             id: 34650745,
             incarceration: "11-07-2018",
             release: "28-02-2023",
-            stato: "detained",
+            state: "detained",
             crimes: ["omicidi", "rapine", "terrorismo"]
         }
     },
@@ -123,6 +123,66 @@ function filterTable(chars) {
          || value.sex.toUpperCase().includes(chars.toUpperCase());
     }
 }
+
+// funzioni per prendere i dati di riepilogo sul carcere
+function getEscapedCriminals() {
+    
+    const criminals = getCriminals(criminali);
+    let count = 0;
+
+    criminals.forEach(function(value) {
+        if(value.file.state == "escaped")
+            count++;
+    })
+    return count;
+}
+
+function getDeadCriminals() {
+
+    const criminals = getCriminals(criminali);
+    let count = 0;
+
+    criminals.forEach(function(value) {
+        if(value.file.state == "died")
+            count++;
+    })
+    return count;
+}
+
+function summary() {
+
+    if(document.getElementById(1).children.length == 0)
+        for(let i = 1; i < 5; i++) {
+            const voidSpan = document.createElement("span");
+            document.getElementById(i).appendChild(voidSpan);
+        }
+
+    const span = document.createElement("span");
+    span.className = "badge bg-primary rounded-pill";
+    span.appendChild(document.createTextNode(getGuards(guardie).length));
+    const oldSpan = document.getElementById(1).children[0];
+    document.getElementById("1").replaceChild(span, oldSpan);
+
+    const span2 = document.createElement("span");
+    span2.className = "badge bg-primary rounded-pill";
+    span2.appendChild(document.createTextNode(getCriminals(criminali).length));
+    const oldSpan2 = document.getElementById(2).lastChild;
+    document.getElementById("2").replaceChild(span2, oldSpan2);
+
+    const span3 = document.createElement("span");
+    span3.className = "badge bg-primary rounded-pill";
+    span3.appendChild(document.createTextNode(getEscapedCriminals()));
+    const oldSpan3 = document.getElementById(3).lastChild;
+    document.getElementById("3").replaceChild(span3, oldSpan3);
+
+    const span4 = document.createElement("span");
+    span4.className = "badge bg-primary rounded-pill";
+    span4.appendChild(document.createTextNode(getDeadCriminals()));
+    const oldSpan4 = document.getElementById(4).lastChild;
+    document.getElementById("4").replaceChild(span4, oldSpan4);
+}
+
+summary();
 
 
 // funzioni per: creare e cancellare la tebella di guardie, aggiungere una guardia e filtrare guardie
@@ -192,6 +252,7 @@ function addGuard() {
     const guards = getGuards(guardie);
     deleteTable();
     createTableGuards(guards);
+    summary();
 }
 
 document.getElementById("inputGuards").addEventListener('keyup', searchGuard)
@@ -300,6 +361,7 @@ function addCriminal() {
     createTableCriminals(criminals);
     deleteTables3();
     createTablesFiles(criminals);
+    summary();
 }
 
 document.getElementById("inputCriminals").addEventListener('keyup', searchCriminal)
